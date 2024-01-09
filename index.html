@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>Scrimba Restaurant</title>
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="container">
+                <h1 class="title">Jimmy's Diner</h1>
+                <h2 class="subtitle">The best burgers and pizzas in town</h2>
+            </div>
+        </header>
+        <main class="menu">
+            <div class="container">
+                <ul class="menu-items" id="menu-items">
+                    <li class="menu-item">
+                        <img src="images/pizza.png" alt="Pizza" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Pizza</h3>
+                            <p class="menu-item-ingredients">pepparoni,mushroom,mozarella</p>
+                            <p class="menu-item-price">$14</p>
+                        </div>
+                        <button class="add-btn" data-menu-item="0" aria-label="Add to Order"></button>
+                    </li>
+                    <li class="menu-item">
+                        <img src="images/hamburger.png" alt="Hamburger" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Hamburger</h3>
+                            <p class="menu-item-ingredients">beef,cheese,lettuce</p>
+                            <p class="menu-item-price">$12</p>
+                        </div>
+                        <button class="add-btn" data-menu-item="0" aria-label="Add to Order"></button>
+                    </li>
+                    <li class="menu-item">
+                        <img src="images/beer.png" alt="Beer" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name">Beer</h3>
+                            <p class="menu-item-ingredients">water,grain,hops,yeast</p>
+                            <p class="menu-item-price">$12</p>
+                        </div>
+                        <button class="add-btn" data-menu-item="0" aria-label="Add to Order"></button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <section class="order">
+            <div class="container">
+                <h3 class="order-title">Your Order</h3>
+                <ul class="order-items">
+                    <li class="order-item">
+                        <p class="order-item-name">Pizza</p>
+                        <button class="order-remove-btn" data-order-item="0">Remove</button>
+                        <p class="order-item-price">$14</p>
+                    </li>
+                    <li class="order-item">
+                        <p class="order-item-name">Hamburger</p>
+                        <button class="order-remove-btn" data-order-item="1">Remove</button>
+                        <p class="order-item-price">$12</p>
+                    </li>
+                    <li class="order-item">
+                        <p class="order-item-name">Beer</p>
+                        <button class="order-remove-btn" data-order-item="2">Remove</button>
+                        <p class="order-item-price">$8</p>
+                    </li>
+                </ul>
+                <hr>
+                <div class="order-total">
+                    <p class="order-item-name">Total Price:</p>
+                    <p class="order-item-price" id="total-price">$26</p>
+                </div>
+                <button class="action-btn" id="complete-order-btn">Complete Order</button>
+            </div>
+        </section>
+        <div class="payment-modal">
+            <div class="payment-modal-inner">
+                <form id="payment-form" class="payment-form">
+                    <h2 class="payment-title">Enter card details</h2>
+                    <input type="text"
+                        name="payment-name"
+                        id="payment-name"
+                        aria-label="your name"
+                        placeholder="Enter your name"
+                        class="payment-input"
+                        >
+                    <input type="text"
+                        name="payment-card"
+                        id="payment-card"
+                        aria-label="Credit card number"
+                        placeholder="Enter card number"
+                        class="payment-input"
+                        >
+                    <input type="text"
+                        name="payment-cvv"
+                        id="payment-cvv"
+                        aria-label="CVV number"
+                        placeholder="Enter CVV"
+                        class="payment-input"
+                        >
+                    <button class="action-btn" id="payment-btn" type="submit">Pay</button>
+                </form>
+            </div>
+        </div>
+        <script src="js/index.js" type="modal"></script>
+    </body>
+</html>
