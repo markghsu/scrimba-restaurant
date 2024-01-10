@@ -21,7 +21,8 @@
             <div class="container">
                 <ul class="menu-items" id="menu-items">
                     <li class="menu-item">
-                        <img src="images/pizza.png" alt="Pizza" class="menu-item-img">
+                        <div class="menu-item-emoji">🍕</div>
+                        <!--<img src="images/pizza.png" alt="Pizza" class="menu-item-img">-->
                         <div class="menu-item-info">
                             <h3 class="menu-item-name">Pizza</h3>
                             <p class="menu-item-ingredients">pepparoni,mushroom,mozarella</p>
@@ -30,7 +31,8 @@
                         <button class="add-btn" data-menu-item="0" aria-label="Add to Order"></button>
                     </li>
                     <li class="menu-item">
-                        <img src="images/hamburger.png" alt="Hamburger" class="menu-item-img">
+                        <div class="menu-item-emoji">🍔</div>
+                        <!--<img src="images/hamburger.png" alt="Hamburger" class="menu-item-img">-->
                         <div class="menu-item-info">
                             <h3 class="menu-item-name">Hamburger</h3>
                             <p class="menu-item-ingredients">beef,cheese,lettuce</p>
@@ -39,7 +41,8 @@
                         <button class="add-btn" data-menu-item="0" aria-label="Add to Order"></button>
                     </li>
                     <li class="menu-item">
-                        <img src="images/beer.png" alt="Beer" class="menu-item-img">
+                        <div class="menu-item-emoji">🍺</div>
+                        <!--<img src="images/beer.png" alt="Beer" class="menu-item-img">-->
                         <div class="menu-item-info">
                             <h3 class="menu-item-name">Beer</h3>
                             <p class="menu-item-ingredients">water,grain,hops,yeast</p>
@@ -50,11 +53,18 @@
                 </ul>
             </div>
         </main>
-        <section class="order">
+        <div class="container">
+            <section class="order-notification hidden" id="order-notification">
+                <p id="order-notification-message">
+                    Thanks, Mark! Your order is on the way
+                </p>
+            </section>
+        </div>
+        <section class="order" id="order">
             <div class="container">
                 <h3 class="order-title">Your Order</h3>
-                <ul class="order-items">
-                    <li class="order-item">
+                <ul class="order-items" id="order-items">
+                    <!--<li class="order-item">
                         <p class="order-item-name">Pizza</p>
                         <button class="order-remove-btn" data-order-item="0">Remove</button>
                         <p class="order-item-price">$14</p>
@@ -68,17 +78,17 @@
                         <p class="order-item-name">Beer</p>
                         <button class="order-remove-btn" data-order-item="2">Remove</button>
                         <p class="order-item-price">$8</p>
-                    </li>
+                    </li>-->
                 </ul>
                 <hr>
                 <div class="order-total">
                     <p class="order-item-name">Total Price:</p>
-                    <p class="order-item-price" id="total-price">$26</p>
+                    <p class="order-item-price" id="total-price"></p>
                 </div>
                 <button class="action-btn" id="complete-order-btn">Complete Order</button>
             </div>
         </section>
-        <div class="payment-modal">
+        <div class="payment-modal hidden" id="payment-modal">
             <div class="payment-modal-inner">
                 <form id="payment-form" class="payment-form">
                     <h2 class="payment-title">Enter card details</h2>
@@ -88,6 +98,7 @@
                         aria-label="your name"
                         placeholder="Enter your name"
                         class="payment-input"
+                        required
                         >
                     <input type="text"
                         name="payment-card"
@@ -95,6 +106,8 @@
                         aria-label="Credit card number"
                         placeholder="Enter card number"
                         class="payment-input"
+                        required
+                        pattern="[0-9]+"
                         >
                     <input type="text"
                         name="payment-cvv"
@@ -102,11 +115,13 @@
                         aria-label="CVV number"
                         placeholder="Enter CVV"
                         class="payment-input"
+                        required
+                        pattern="[0-9]{3,4}"
                         >
                     <button class="action-btn" id="payment-btn" type="submit">Pay</button>
                 </form>
             </div>
         </div>
-        <script src="js/index.js" type="modal"></script>
+        <script src="js/index.js" type="module"></script>
     </body>
 </html>
