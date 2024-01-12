@@ -184,10 +184,6 @@ button:disabled {
 }
 
 .order {
-/*	position: sticky;
-	bottom: 0;
-	left: 0;
-	right: 0;*/
 	margin: 0 auto 20px;
 	font-family: 'Smythe', system-ui;
 	color: #000;
@@ -236,6 +232,11 @@ button:disabled {
 .order-item-price {
 	font-size: 20px;
 	margin: 0 0 0 auto;
+}
+
+.order-discount {
+	color: #6C7E53;
+	/* IDEALLY WE WANT A BOLD HERE, BUT OUR FONT DOESN'T HAVE ANY BOLD VERSION */
 }
 
 .order-total {
